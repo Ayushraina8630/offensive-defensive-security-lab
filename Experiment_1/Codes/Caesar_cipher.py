@@ -1,6 +1,5 @@
-def vigenere_encrypt(text, key):
+def caesar_encrypt(text, shift):
     result = ""
-    key_index = 0
 
     for char in text:
         if char.isalpha():
@@ -8,56 +7,28 @@ def vigenere_encrypt(text, key):
                 base = ord('A')
             else:
                 base = ord('a')
-
-            shift = ord(key[key_index % len(key)].lower()) - ord('a')
 
             new_position = (ord(char) - base + shift) % 26
             result += chr(new_position + base)
-
-            key_index += 1
         else:
             result += char
 
     return result
 
 
-def vigenere_decrypt(text, key):
-    result = ""
-    key_index = 0
-
-    for char in text:
-        if char.isalpha():
-            if char.isupper():
-                base = ord('A')
-            else:
-                base = ord('a')
-
-            shift = ord(key[key_index % len(key)].lower()) - ord('a')
-
-            new_position = (ord(char) - base - shift) % 26
-            result += chr(new_position + base)
-
-            key_index += 1
-        else:
-            result += char
-
-    return result
+def caesar_decrypt(text, shift):
+    return caesar_encrypt(text, -shift)
 
 
 # Taking input from user
 plaintext = input("Enter the message: ")
-key = input("Enter the key: ")
-
-# Checking the key
-if not key.isalpha():
-    print("Error: Key must contain alphabets only.")
-    exit()
+shift = int(input("Enter the shift: "))
 
 # Encryption
-ciphertext = vigenere_encrypt(plaintext, key)
+ciphertext = caesar_encrypt(plaintext, shift)
 
 # Decryption
-decrypted = vigenere_decrypt(ciphertext, key)
+decrypted = caesar_decrypt(ciphertext, shift)
 
 # Output
 print("Encrypted :", ciphertext)
