@@ -18,4 +18,4 @@ This repository contains the laboratory work for **COM-512: Offensive and Defens
 7. [Experiment 7: OSINT Recon](Experiment-7-OSINT-Recon/README.md)
 8. [Experiment 8: MITRE ATT&CK Mapping](Experiment-8-MITRE-ATTACK-Mapping/README.md)
 9. [Experiment 9: Password-Guessing Detection and Mitigation](Experiment-9-Password-Guessing-Detection/README.md)
-10. Experiment 10: Gophish Phishing Simulation
+10. [Experiment 10: Phishing Awareness and Detection](Experiment-10-Phishing-Awareness-Detection/README.md)
